@@ -1,0 +1,19 @@
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\bin\Debug\SAEView.exe
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\bin\Debug\SAEView.pdb
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.csprojResolveAssemblyReference.cache
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.Form1.resources
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.Properties.Resources.resources
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.csproj.GenerateResource.Cache
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.exe
+c:\users\victhor\documents\visual studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.pdb
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.exe
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.pdb
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\bin\Debug\SAEView.exe.config
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\bin\Debug\SAEView.exe
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\bin\Debug\SAEView.pdb
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.csprojResolveAssemblyReference.cache
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.Form1.resources
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.Properties.Resources.resources
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.SignIn.resources
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.csproj.GenerateResource.Cache
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.Configuration.resources
