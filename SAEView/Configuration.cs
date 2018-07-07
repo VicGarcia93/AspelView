@@ -45,6 +45,8 @@ namespace SAEView
                 {
                     SAEView.Properties.Settings.Default.port = txtPuerto.Text;
                     SAEView.Properties.Settings.Default.server = txtServidor.Text;
+                    SAEView.Properties.Settings.Default.Save();
+                    this.Close();
                 }
                
             }
