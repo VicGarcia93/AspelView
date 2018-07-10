@@ -6,10 +6,10 @@
       <Value Profile="(Default)">Veca2018</Value>
     </Setting>
     <Setting Name="server" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">7.1.1.239</Value>
     </Setting>
     <Setting Name="port" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">8000</Value>
     </Setting>
   </Settings>
 </SettingsFile>

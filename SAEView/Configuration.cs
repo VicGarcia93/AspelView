@@ -12,9 +12,12 @@ namespace SAEView
 {
     public partial class Configuration : Form
     {
+        
         public Configuration()
         {
             InitializeComponent();
+            
+
         }
 
         private void Configuration_Load(object sender, EventArgs e)
@@ -113,5 +116,7 @@ namespace SAEView
             if (txtPuerto.Text.Trim().Equals(""))
                 txtPuerto.Text = "Ej. 8000";
         }
+
+        
     }
 }

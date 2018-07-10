@@ -38,7 +38,7 @@ namespace SAEView
             if (pass == SAEView.Properties.Settings.Default.PASS)
             {
                 isOK = true;
-                form.Close();
+                form.Dispose();
                 this.Dispose();
             }
             else

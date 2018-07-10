@@ -7,14 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+
 
 namespace SAEView
 {
     public partial class Form1 : Form
     {
+        Socket socket;
+        Socket socketConexion;
+        EndPoint puntoLocal;
+        EndPoint puntoDestino;
+        bool corriendo;
+        byte[] buffer;
+        string datosRecibidos;
+        int contadorLeido;
+        Process[] procesosSAE;
+        Process[] procesosCOI;
+        Process[] procesosBan;
         public Form1()
         {
             InitializeComponent();
+            
+            buffer = new byte[100];
+            datosRecibidos = "";
+            contadorLeido = 0;
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            puntoLocal = new IPEndPoint(IPAddress.Any, 8000);
+            puntoDestino = new IPEndPoint(IPAddress.Parse(SAEView.Properties.Settings.Default.server), int.Parse(SAEView.Properties.Settings.Default.port));
+            socket.Bind(puntoLocal);
+            corriendo = true;
+            new Thread(ListenerData).Start();
+            
         }
 
         public void ShowNotify()
@@ -27,7 +53,7 @@ namespace SAEView
 
         public void CheckAspelsSystem()
         {
-            Process[] procesosSAE = Process.GetProcessesByName("saewin70");
+            procesosSAE = Process.GetProcessesByName("saewin70");
             if (procesosSAE.Length > 0)
             {
                 pbStateSAE.Image = SAEView.Properties.Resources.icon_ok;
@@ -38,7 +64,7 @@ namespace SAEView
                 pbStateSAE.Image = SAEView.Properties.Resources.icon_inactvo;
                 lblCantidadSAE.Text = "0";
             }
-            Process[] procesosCOI = Process.GetProcessesByName("coiwin");
+            procesosCOI = Process.GetProcessesByName("coiwin");
             if (procesosCOI.Length > 0)
             {
                 pbStateCOI.Image = SAEView.Properties.Resources.icon_ok;
@@ -49,7 +75,7 @@ namespace SAEView
                 pbStateCOI.Image = SAEView.Properties.Resources.icon_inactvo;
                 lblCantidadCoi.Text = "0";
             }
-            Process[] procesosBan = Process.GetProcessesByName("banwin");
+            procesosBan = Process.GetProcessesByName("banwin");
             if (procesosBan.Length > 0)
             {
                 pbStateBanco.Image = SAEView.Properties.Resources.icon_ok;
@@ -91,6 +117,12 @@ namespace SAEView
             SignIn signIn = new SignIn(this);
             signIn.ShowDialog();
            // this.Close();
+            if (signIn.GetIsOK())
+            {
+                corriendo = false;
+                socket.Dispose();
+            }
+                
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -153,6 +185,51 @@ namespace SAEView
         {
             Configuration conf = new Configuration();
             conf.ShowDialog();
+        }
+
+        private void ListenerData()
+        {
+            try
+            {
+                socket.Listen(10);
+                socketConexion = socket.Accept();
+                
+                while (corriendo)
+                {
+                    if (socketConexion.Available == 0)
+                    {
+                        Thread.Sleep(200);
+                        continue;
+                    }
+                    Console.WriteLine(datosRecibidos);
+                    contadorLeido = socketConexion.Receive(buffer, 0, buffer.Length, 0);
+                    datosRecibidos = Encoding.Default.GetString(buffer, 0, contadorLeido);
+
+                    if (datosRecibidos.Equals("1"))
+                    {
+                        CheckAspelsSystem();
+                        EnviarDatos();
+                        Console.WriteLine("Recibido");
+                        Console.WriteLine(datosRecibidos);
+                        datosRecibidos = "x";
+                        socket.Listen(10);
+                        socketConexion = socket.Accept();
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Cancelado");
+            }
+            
+        }
+
+        private void EnviarDatos()
+        {
+            string datosEnviar = "";
+            datosEnviar = procesosSAE.Length + "," + procesosCOI.Length + "," + procesosBan.Length;
+            socketConexion.SendTo(Encoding.Default.GetBytes(datosEnviar), puntoLocal);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace SAEView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7.1.1.239")]
         public string server {
             get {
                 return ((string)(this["server"]));
@@ -49,7 +49,7 @@ namespace SAEView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8000")]
         public string port {
             get {
                 return ((string)(this["port"]));
