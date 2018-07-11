@@ -117,6 +117,11 @@ namespace SAEView
                 txtPuerto.Text = "Ej. 8000";
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
         
     }
 }

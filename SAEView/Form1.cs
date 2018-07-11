@@ -45,7 +45,7 @@ namespace SAEView
 
         public void ShowNotify()
         {
-            notifyIcon1.Icon = SystemIcons.Application;
+           // notifyIcon1.Icon = SystemIcons.Application;
             notifyIcon1.BalloonTipText = "Ejecutandose en segundo plano";
             notifyIcon1.ShowBalloonTip(1000);
             this.Hide();
