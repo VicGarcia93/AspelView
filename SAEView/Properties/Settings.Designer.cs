@@ -58,5 +58,17 @@ namespace SAEView.Properties {
                 this["port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8000")]
+        public string localPort {
+            get {
+                return ((string)(this["localPort"]));
+            }
+            set {
+                this["localPort"] = value;
+            }
+        }
     }
 }

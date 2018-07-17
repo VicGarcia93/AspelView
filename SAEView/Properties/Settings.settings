@@ -11,5 +11,8 @@
     <Setting Name="port" Type="System.String" Scope="User">
       <Value Profile="(Default)">8000</Value>
     </Setting>
+    <Setting Name="localPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

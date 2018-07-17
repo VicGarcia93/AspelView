@@ -34,8 +34,9 @@ namespace SAEView
             buffer = new byte[100];
             datosRecibidos = "";
             contadorLeido = 0;
+            int puertoLocal = 8000;
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            puntoLocal = new IPEndPoint(IPAddress.Any, 8000);
+            puntoLocal = new IPEndPoint(IPAddress.Any, puertoLocal);
             puntoDestino = new IPEndPoint(IPAddress.Parse(SAEView.Properties.Settings.Default.server), int.Parse(SAEView.Properties.Settings.Default.port));
             socket.Bind(puntoLocal);
             corriendo = true;
@@ -151,7 +152,9 @@ namespace SAEView
 
         private void Form1_Shown(object sender, EventArgs e)
         {
+            
             CheckAspelsSystem();
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -179,6 +182,7 @@ namespace SAEView
             CheckAspelsSystem();
             this.Show();
             this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -201,7 +205,7 @@ namespace SAEView
                         Thread.Sleep(200);
                         continue;
                     }
-                    Console.WriteLine(datosRecibidos);
+                    
                     contadorLeido = socketConexion.Receive(buffer, 0, buffer.Length, 0);
                     datosRecibidos = Encoding.Default.GetString(buffer, 0, contadorLeido);
 
@@ -211,10 +215,12 @@ namespace SAEView
                         EnviarDatos();
                         Console.WriteLine("Recibido");
                         Console.WriteLine(datosRecibidos);
+                        
                         datosRecibidos = "x";
                         socket.Listen(10);
                         socketConexion = socket.Accept();
                     }
+                    
                 }
 
             }
@@ -227,9 +233,17 @@ namespace SAEView
 
         private void EnviarDatos()
         {
+            Console.WriteLine("Enviando....");
             string datosEnviar = "";
             datosEnviar = procesosSAE.Length + "," + procesosCOI.Length + "," + procesosBan.Length;
-            socketConexion.SendTo(Encoding.Default.GetBytes(datosEnviar), puntoLocal);
+            Console.WriteLine(socketConexion.RemoteEndPoint);
+            socketConexion.SendTo(Encoding.Default.GetBytes(datosEnviar), socketConexion.RemoteEndPoint);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.ShowInTaskbar = false;
         }
     }
 }
