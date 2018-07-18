@@ -17,3 +17,5 @@ C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\D
 C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.SignIn.resources
 C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.csproj.GenerateResource.Cache
 C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.Configuration.resources
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Debug\SAEView.csproj.ResolveComReference.cache

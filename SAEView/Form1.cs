@@ -244,6 +244,8 @@ namespace SAEView
         {
             this.Hide();
             this.ShowInTaskbar = false;
+            AbrirPuerto nuevoPuerto = new AbrirPuerto();
+            nuevoPuerto.AgregarExcepcionAFireWall();
         }
     }
 }

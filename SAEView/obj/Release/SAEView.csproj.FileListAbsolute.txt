@@ -9,3 +9,5 @@ C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\R
 C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Release\SAEView.csproj.GenerateResource.Cache
 C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Release\SAEView.exe
 C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Release\SAEView.pdb
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Release\Interop.NetFwTypeLib.dll
+C:\Users\Usuario 232\Documents\Visual Studio 2013\Projects\SAEView\SAEView\obj\Release\SAEView.csproj.ResolveComReference.cache
